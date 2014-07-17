@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding="@dimen/default_window_padding">
+
+    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/item_detail"
+        style="?android:attr/textAppearanceLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:context=".ItemDetailFragment"
+        android:layout_gravity="left|top"
+        android:text="[product]"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+        android:textSize="@dimen/H1"
+        android:textColor="@android:color/primary_text_dark" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+        android:text="## left"
+        android:id="@+id/item_count"
+        android:layout_gravity="right|top"
+        android:textColor="@android:color/secondary_text_dark" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Dispense"
+        android:id="@+id/dispense_button"
+        android:layout_gravity="center"
+        android:textSize="@dimen/big_button_text_size"
+        android:paddingTop="@dimen/big_button_top_bottom_padding"
+        android:paddingBottom="@dimen/big_button_top_bottom_padding"
+        android:paddingLeft="@dimen/big_button_left_right_padding"
+        android:paddingRight="@dimen/big_button_left_right_padding" />
+</FrameLayout>

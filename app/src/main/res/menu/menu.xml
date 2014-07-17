@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/reload_menu_item"
+        android:title="@string/reload_long"
+        android:titleCondensed="@string/reload_short"
+        android:showAsAction="ifRoom"
+        android:alphabeticShortcut="r"
+        android:numericShortcut="5"
+        android:checkable="false"
+        android:visible="true"
+        android:enabled="true"
+        android:menuCategory="system"
+        android:orderInCategory="0"
+        />
+</menu>

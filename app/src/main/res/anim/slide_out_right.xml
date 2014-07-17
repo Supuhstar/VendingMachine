@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<set
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:interpolator="@android:anim/accelerate_interpolator">
+    <translate
+        android:fromXDelta="@fraction/slide_right_showing"
+        android:toXDelta="@fraction/slide_right_hidden"
+        android:duration="@integer/transition_milliseconds"
+        />
+</set>

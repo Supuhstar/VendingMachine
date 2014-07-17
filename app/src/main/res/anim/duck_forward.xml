@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<set
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:interpolator="@android:anim/accelerate_interpolator"
+    android:shareInterpolator="true">
+    <scale
+        android:fromXScale="@fraction/duck_back_scale"
+        android:fromYScale="@fraction/duck_back_scale"
+        android:toXScale="@fraction/duck_front_scale"
+        android:toYScale="@fraction/duck_front_scale"
+        android:duration="@integer/transition_milliseconds"
+        />
+    <translate
+        android:fromXDelta="@fraction/duck_back_x"
+        android:fromYDelta="@fraction/duck_back_y"
+        android:toXDelta="@fraction/duck_front_x"
+        android:toYDelta="@fraction/duck_front_y"
+        android:duration="@integer/transition_milliseconds"
+        />
+    <alpha
+        android:fromAlpha="0.0"
+        android:toAlpha="1.0"
+        android:duration="@integer/transition_milliseconds"
+        />
+</set>

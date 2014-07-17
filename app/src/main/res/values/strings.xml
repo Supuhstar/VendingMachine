@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Vending Machine</string>
+    <string name="title_item_detail">Item Detail</string>
+    <string name="reload_short">Reload</string>
+    <string name="reload_long">Reload All Items</string>
+    <string name="dispense_text">Dispense</string>
+
+</resources>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="transition_milliseconds">@android:integer/config_shortAnimTime</integer>
+
+    <fraction name="duck_front_scale">100%p</fraction>
+    <fraction name="duck_back_scale">90%p</fraction>
+    <fraction name="duck_front_x">0%p</fraction>
+    <fraction name="duck_front_y">@fraction/duck_front_x</fraction>
+    <fraction name="duck_back_x">5%p</fraction>
+    <fraction name="duck_back_y">@fraction/duck_back_x</fraction>
+    <!--fraction name="duck_front_alpha">1.0</fraction-->
+    <!--fraction name="duck_back_alpha">0.9</fraction-->
+
+    <fraction name="slide_right_showing">0%p</fraction>
+    <fraction name="slide_right_hidden">100%p</fraction>
+    <fraction name="slide_left_showing">@fraction/slide_right_showing</fraction>
+    <fraction name="slide_left_hidden">-100%p</fraction>
+</resources>
