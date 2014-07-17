@@ -1,5 +1,6 @@
 package org.bh.app.vendingmachine;
 
+import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
@@ -111,6 +112,10 @@ public class ItemListActivity extends Activity
     public void reloadItems()
     {
         Vendibles.reloadItems();
+        Fragment f = getFragmentManager().findFragmentById(R.id.item_list);
+        System.out.println(f);
+        if (f instanceof ItemListFragment)
+            ((ItemListFragment) f).recreateListAdapter();
         reloadedToast.show();
     }
 }

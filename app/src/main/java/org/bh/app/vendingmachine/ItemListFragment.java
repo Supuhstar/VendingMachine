@@ -83,7 +83,7 @@ public class ItemListFragment extends ListFragment {
     }
 
     public void recreateListAdapter()
-    {/*
+    {
         setListAdapter(
                 new ArrayAdapter<Vendibles.Vendible>(
                     getActivity(),
@@ -91,7 +91,8 @@ public class ItemListFragment extends ListFragment {
                     android.R.id.text1,
                     Vendibles.ITEMS
                 )
-        );*/
+        );
+        /*
         setListAdapter(
                 new SimpleAdapter(
                         getActivity(),
@@ -100,7 +101,7 @@ public class ItemListFragment extends ListFragment {
                         new String[] { Vendibles.MAP_NAME, Vendibles.MAP_COUNT },
                         new int[] { R.id.list_item_line_1, R.id.list_item_line_2 }
                 )
-        );
+        );*/
     }
 
     @Override
