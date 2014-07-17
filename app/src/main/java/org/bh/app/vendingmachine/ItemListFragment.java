@@ -114,6 +114,7 @@ public class ItemListFragment extends ListFragment {
         }
 
         mCallbacks = (Callbacks) activity;
+
     }
 
     @Override

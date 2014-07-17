@@ -36,6 +36,8 @@ public class ItemListActivity extends Activity
      */
     private boolean mTwoPane;
 
+    private Toast reloadedToast;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,6 +58,8 @@ public class ItemListActivity extends Activity
                     .findFragmentById(R.id.item_list))
                     .setActivateOnItemClick(true);
         }
+
+        reloadedToast = Toast.makeText(this, "Reloaded", Toast.LENGTH_SHORT);
 
         // TODO: If exposing deep links into your app, handle intents here.
     }
@@ -107,6 +111,6 @@ public class ItemListActivity extends Activity
     public void reloadItems()
     {
         Vendibles.reloadItems();
-        Toast.makeText(this, "Reloaded", Toast.LENGTH_SHORT).show();
+        reloadedToast.show();
     }
 }
