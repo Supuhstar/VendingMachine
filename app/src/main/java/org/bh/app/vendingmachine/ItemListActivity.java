@@ -6,6 +6,9 @@ import android.app.Activity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.Toast;
+
+import org.bh.app.vendingmachine.dummy.Vendibles;
 
 
 /**
@@ -95,7 +98,7 @@ public class ItemListActivity extends Activity
     public boolean onMenuItemSelected(int featureId, MenuItem item) {
         switch (featureId)
         {
-            case R.id.reload_menu_item:
+            case 0: // first item; Reload
                 reloadItems();
         }
         return super.onMenuItemSelected(featureId, item);
@@ -103,6 +106,7 @@ public class ItemListActivity extends Activity
 
     public void reloadItems()
     {
-        
+        Vendibles.reloadItems();
+        Toast.makeText(this, "Reloaded", Toast.LENGTH_SHORT).show();
     }
 }
