@@ -11,7 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
-import org.bh.app.vendingmachine.dummy.Vendibles;
+import org.bh.app.vendingmachine.data_structure.Vendibles;
 
 /**
  * A fragment representing a single Item detail screen.

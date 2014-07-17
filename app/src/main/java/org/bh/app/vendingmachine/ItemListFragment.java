@@ -6,9 +6,10 @@ import android.app.ListFragment;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.SimpleAdapter;
 
 
-import org.bh.app.vendingmachine.dummy.Vendibles;
+import org.bh.app.vendingmachine.data_structure.Vendibles;
 
 /**
  * A list fragment representing a list of Items. This fragment
@@ -82,13 +83,22 @@ public class ItemListFragment extends ListFragment {
     }
 
     public void recreateListAdapter()
-    {
+    {/*
         setListAdapter(
                 new ArrayAdapter<Vendibles.Vendible>(
                     getActivity(),
                     android.R.layout.two_line_list_item,
                     android.R.id.text1,
                     Vendibles.ITEMS
+                )
+        );*/
+        setListAdapter(
+                new SimpleAdapter(
+                        getActivity(),
+                        Vendibles.toMapList(),
+                        android.R.layout.two_line_list_item,
+                        new String[] { Vendibles.MAP_NAME, Vendibles.MAP_COUNT },
+                        new int[] { R.id.list_item_line_1, R.id.list_item_line_2 }
                 )
         );
     }

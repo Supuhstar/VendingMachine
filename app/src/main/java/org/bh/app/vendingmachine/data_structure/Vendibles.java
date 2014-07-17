@@ -1,4 +1,4 @@
-package org.bh.app.vendingmachine.dummy;
+package org.bh.app.vendingmachine.data_structure;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -62,6 +62,25 @@ public class Vendibles {
                 ret.addAll(((CondensedVendible) v).expand());
             else
                 ret.add(v);
+        return ret;
+    }
+
+    public static final String MAP_COUNT = "count", MAP_NAME = "name";
+    public static List<Map<String, Object>> toMapList()
+    {
+        List<Map<String, Object>> ret = new ArrayList<Map<String, Object>>();
+        for(Vendible v : ITEMS) {
+            if (v == null) continue; // no use trying to process notyhing
+            Map<String, Object> uselesslySmallMap = new HashMap<String, Object>();
+            uselesslySmallMap.put(MAP_COUNT,
+                v instanceof CondensedVendible
+                    ? ((CondensedVendible) v).count
+                    : (byte)1
+            );
+            uselesslySmallMap.put(MAP_NAME, v.name);
+
+            ret.add(uselesslySmallMap);
+        }
         return ret;
     }
 

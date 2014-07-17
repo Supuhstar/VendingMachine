@@ -8,7 +8,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import org.bh.app.vendingmachine.dummy.Vendibles;
+import org.bh.app.vendingmachine.data_structure.Vendibles;
 
 
 /**
