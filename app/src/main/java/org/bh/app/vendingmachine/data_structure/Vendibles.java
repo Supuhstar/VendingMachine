@@ -66,16 +66,17 @@ public class Vendibles {
     }
 
     public static final String MAP_COUNT = "count", MAP_NAME = "name";
-    public static List<Map<String, Object>> toMapList()
+    public static List<Map<String, String>> toMapList()
     {
-        List<Map<String, Object>> ret = new ArrayList<Map<String, Object>>();
+        List<Map<String, String>> ret = new ArrayList<Map<String, String>>();
         for(Vendible v : ITEMS) {
             if (v == null) continue; // no use trying to process notyhing
-            Map<String, Object> uselesslySmallMap = new HashMap<String, Object>();
+            Map<String, String> uselesslySmallMap = new HashMap<String, String>();
             uselesslySmallMap.put(MAP_COUNT,
-                v instanceof CondensedVendible
+                (v instanceof CondensedVendible
                     ? ((CondensedVendible) v).count
                     : (byte)1
+                )+""
             );
             uselesslySmallMap.put(MAP_NAME, v.name);
 
