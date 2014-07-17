@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:context=".ItemDetailFragment"
-        android:layout_gravity="left|top"
+        android:layout_gravity="center_horizontal|top"
         android:text="[product]"
         android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
         android:textSize="@dimen/H1"
@@ -39,4 +39,11 @@
         android:paddingBottom="@dimen/big_button_top_bottom_padding"
         android:paddingLeft="@dimen/big_button_left_right_padding"
         android:paddingRight="@dimen/big_button_left_right_padding" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/detail_icon"
+        android:layout_gravity="left|top"
+        android:src="@drawable/ic_launcher" />
 </FrameLayout>

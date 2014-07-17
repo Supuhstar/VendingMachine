@@ -22,7 +22,7 @@
     -->
 
     <fragment
-        android:id="@+id/item_list"
+        android:id="@+id/item_list_fragment"
         android:name="org.bh.app.vendingmachine.ItemListFragment"
         android:layout_width="0dp"
         android:layout_height="match_parent"

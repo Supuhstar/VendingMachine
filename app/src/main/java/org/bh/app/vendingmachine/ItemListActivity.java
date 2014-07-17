@@ -56,7 +56,7 @@ public class ItemListActivity extends Activity
             // In two-pane mode, list items should be given the
             // 'activated' state when touched.
             ((ItemListFragment) getFragmentManager()
-                    .findFragmentById(R.id.item_list))
+                    .findFragmentById(R.id.item_list_fragment))
                     .setActivateOnItemClick(true);
         }
 
@@ -112,7 +112,7 @@ public class ItemListActivity extends Activity
     public void reloadItems()
     {
         Vendibles.reloadItems();
-        Fragment f = getFragmentManager().findFragmentById(R.id.item_list);
+        Fragment f = getFragmentManager().findFragmentById(R.id.item_list_fragment);
         System.out.println(f);
         if (f instanceof ItemListFragment)
             ((ItemListFragment) f).recreateListAdapter();

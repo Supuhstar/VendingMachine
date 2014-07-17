@@ -9,6 +9,7 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
 
+import org.bh.app.vendingmachine.data_structure.VendableItemListAdapter;
 import org.bh.app.vendingmachine.data_structure.Vendibles;
 
 /**
@@ -83,7 +84,7 @@ public class ItemListFragment extends ListFragment {
     }
 
     public void recreateListAdapter()
-    {
+    {/*
         setListAdapter(
                 new ArrayAdapter<Vendibles.Vendible>(
                     getActivity(),
@@ -92,16 +93,16 @@ public class ItemListFragment extends ListFragment {
                     Vendibles.ITEMS
                 )
         );
-        /*
         setListAdapter(
                 new SimpleAdapter(
                         getActivity(),
                         Vendibles.toMapList(),
                         android.R.layout.two_line_list_item,
-                        new String[] { Vendibles.MAP_NAME, Vendibles.MAP_COUNT },
+                        new String[] { Vendibles.NAME_KEY, Vendibles.COUNT_KEY },
                         new int[] { R.id.list_item_line_1, R.id.list_item_line_2 }
                 )
         );*/
+        setListAdapter(new VendableItemListAdapter(getActivity(), Vendibles.toMapList()));
     }
 
     @Override

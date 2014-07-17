@@ -5,4 +5,9 @@
     <dimen name="big_button_text_size">30dp</dimen>
     <dimen name="big_button_top_bottom_padding">10dp</dimen>
     <dimen name="big_button_left_right_padding">20dp</dimen>
+    <dimen name="list_item_top_margin">8dp</dimen>
+    <dimen name="list_item_left_margin">16dp</dimen>
+    <dimen name="list_item_bottom_margin">@dimen/list_item_top_margin</dimen>
+    <dimen name="list_item_right_margin">@dimen/list_item_left_margin</dimen>
+    <dimen name="list_item_image_min_height">48dp</dimen>
 </resources>

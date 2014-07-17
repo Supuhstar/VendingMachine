@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -61,6 +62,7 @@ public class ItemDetailFragment extends Fragment {
         // Show the dummy content as text in a TextView.
         if (mItem != null) {
             ((TextView) rootView.findViewById(R.id.item_detail)).setText(mItem.name);
+            ((ImageView) rootView.findViewById(R.id.detail_icon)).setImageResource(mItem.iconID);
             dispenseToast = Toast.makeText(
                     getActivity(),
                     "Dispensed 1 " + mItem.name + "!",

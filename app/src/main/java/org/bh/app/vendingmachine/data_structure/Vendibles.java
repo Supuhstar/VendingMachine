@@ -1,5 +1,7 @@
 package org.bh.app.vendingmachine.data_structure;
 
+import org.bh.app.vendingmachine.R;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -30,14 +32,14 @@ public class Vendibles {
         ITEMS.clear();
         ITEM_MAP.clear();
 
-        addItem("Pepsi", (byte) 10);
-        addItem("KitKat", (byte)10);
-        addItem("Doritos", (byte)10);
-        addItem("Water", (byte)10);
+        addItem("Pepsi",   R.drawable.icon_pepsi,   (byte)10);
+        addItem("KitKat",  R.drawable.icon_kitkat,  (byte)10);
+        addItem("Doritos", R.drawable.icon_doritos, (byte)10);
+        addItem("Water",   R.drawable.icon_dasani,  (byte)10);
     }
 
-    public static void addItem(String itemName, byte count) {
-        Vendible item = new CondensedVendible(itemName, count);
+    public static void addItem(String itemName, int initIconID, byte count) {
+        Vendible item = new CondensedVendible(itemName, initIconID, count);
         ITEMS.add(item);
         ITEM_MAP.put(item.id, item);
     }
@@ -65,20 +67,21 @@ public class Vendibles {
         return ret;
     }
 
-    public static final String MAP_COUNT = "count", MAP_NAME = "name";
+    public static final String COUNT_KEY = "count", NAME_KEY = "name", ICON_KEY = "icon";
     public static List<Map<String, String>> toMapList()
     {
         List<Map<String, String>> ret = new ArrayList<Map<String, String>>();
         for(Vendible v : ITEMS) {
             if (v == null) continue; // no use trying to process notyhing
             Map<String, String> uselesslySmallMap = new HashMap<String, String>();
-            uselesslySmallMap.put(MAP_COUNT,
+            uselesslySmallMap.put(COUNT_KEY,
                 (v instanceof CondensedVendible
                     ? ((CondensedVendible) v).count
                     : (byte)1
-                )+""
+                )+" left"
             );
-            uselesslySmallMap.put(MAP_NAME, v.name);
+            uselesslySmallMap.put(NAME_KEY, v.name);
+            uselesslySmallMap.put(ICON_KEY, v.iconID+"");
 
             ret.add(uselesslySmallMap);
         }
@@ -91,10 +94,12 @@ public class Vendibles {
     public static class Vendible {
         public String id;
         public String name;
+        public int iconID;
 
-        public Vendible(String initName) {
+        public Vendible(String initName, int initIconID) {
             this.id = IDGen.newID();
             name = initName;
+            iconID = initIconID;
         }
 
         @Override
@@ -106,9 +111,9 @@ public class Vendibles {
     public static class CondensedVendible extends Vendible
     {
         private byte count = 0;
-        public CondensedVendible(String name, byte initCount)
+        public CondensedVendible(String initName, int initIconID, byte initCount)
         {
-            super(name);
+            super(initName, initIconID);
             count = initCount;
         }
 
@@ -136,7 +141,7 @@ public class Vendibles {
         {
             List<Vendible> ret = new ArrayList<Vendible>();
             for (int i = 0; i < count; i++)
-                ret.add(new Vendible(name));
+                ret.add(new Vendible(name, iconID));
             return ret;
         }
 
