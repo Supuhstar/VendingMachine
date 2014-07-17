@@ -86,7 +86,7 @@ public class ItemListFragment extends ListFragment {
         setListAdapter(
                 new ArrayAdapter<Vendibles.Vendible>(
                     getActivity(),
-                    android.R.layout.simple_list_item_activated_1,
+                    android.R.layout.two_line_list_item,
                     android.R.id.text1,
                     Vendibles.ITEMS
                 )
@@ -114,7 +114,6 @@ public class ItemListFragment extends ListFragment {
         }
 
         mCallbacks = (Callbacks) activity;
-
     }
 
     @Override
